@@ -35,6 +35,22 @@ plusBtn.addEventListener('click', increase)
 
 let themeBtns = document.querySelectorAll('.theme-buttons')
 
+
 function selectTheme(event) {
-    console.log(event)
+    document.body.className = event.target.textContent
+    // document.querySelector('body').className = event.target.textContent
+
+    document.querySelector('main').className = event.target.textContent
+
+    let buttons = document.querySelectorAll('button')
+    for(let i=0; i < buttons.length; i++) {
+        buttons[i].className = event.target.textContent
+    }
 }
+
+for(let i=0; i<themeBtns.length;i++) {
+    themeBtns[i].addEventListener('click', selectTheme)
+}
+
+
+//---------------------------------------------------------------------------------------------------
